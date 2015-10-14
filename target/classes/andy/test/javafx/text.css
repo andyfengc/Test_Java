@@ -1,0 +1,11 @@
+.text1{
+	-fx-font-size: 30px;
+}
+.nodeRectangle{
+	-fx-fill:null;
+	-fx-stroke-line-cap: square;
+	-fx-stroke: black;
+}
+.line1{
+	-fx-stroke-dash-array: 4;
+}

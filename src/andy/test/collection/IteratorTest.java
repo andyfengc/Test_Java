@@ -1,6 +1,7 @@
 package andy.test.collection;
 
 import java.io.Console;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -18,13 +19,44 @@ public class IteratorTest {
 		list.add(s3);
 		list.add(s4);
 
-		// for (Student s : list){
-		// System.out.println(s);
-		// }
+//		for (Student s : list) {
+//			System.out.println(s);
+//		}
 
-		Iterator<Student> it = list.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
+//		Iterator<Student> it = list.iterator();
+//		while (it.hasNext()) {
+//			Student item = it.next();
+//			if (item.name == "Kevin") {
+//				it.remove();
+//			}
+//			System.out.println(item);
+//		}
+		
+		
+		List<Student> students = new ArrayList<Student>();
+		students.add(s1);
+		students.add(s2);
+		students.add(s3);
+		students.add(s4);
+//		for(Student s : students) {			
+//			System.out.println(s);
+//			students.remove(s); // fail
+//		}
+//		Iterator<Student> it = students.iterator();
+//		while(it.hasNext()) {
+//			Student item = it.next();			
+//			if (item.name == "Kevin") {
+//				students.remove(item); // faile
+//			}
+//			//System.out.println(item);
+//		}
+		for(int i = 0; i < students.size(); i++) {
+			Student item = students.get(i);
+			System.out.println(item);
+			if (item.name == "Kevin") {
+				students.remove(item);
+				
+			}
 		}
 	}
 
@@ -124,8 +156,8 @@ class Student {
 		this.score = score;
 	}
 
-	private String name;
-	private double score;
+	public String name;
+	public double score;
 
 	@Override
 	public String toString() {
